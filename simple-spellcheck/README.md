@@ -22,10 +22,10 @@ To generate the set of alternate spellings, we consider four cases: substitions,
 
 For example, take the word 'farmer'. 
 
--Substitution: fwrmer, rarmer, farner - one letter substitued by another
--Transposition: farmre, famrer, afrmer - a pair of letters swaps
--Insertions: farmner, fasrmer, farmert - an extra letter inserted
--Deletions: farmr, frmer, armer - a letter deleted
+- Substitution: fwrmer, rarmer, farner - one letter substitued by another
+- Transposition: farmre, famrer, afrmer - a pair of letters swaps
+- Insertions: farmner, fasrmer, farmert - an extra letter inserted
+- Deletions: farmr, frmer, armer - a letter deleted
 
 The total set of alternate spellings for a word consists of all combinations (a-z, assuming a simple unaccented Roman alphabet) in all positions for all four cases. This is a very large set, but we can then limit it to only those words that match entries in the dictionary.
 
