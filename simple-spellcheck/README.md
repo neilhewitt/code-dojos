@@ -3,7 +3,7 @@ Simple Spellcheck
 
 The goal of this kata is to create an idiomatic C# (or Java or PHP) implementation of Peter Norvig's simple spellcheck algorithm. 
 
-You'll need to download the corpus.txt file which you'll find in the root of this folder. This contains a list of dictionary works which is essential for this problem.
+You'll need to download the corpus.txt file which you'll find in the root of this folder. This contains a variety of text sources which are essential for this problem.
 
 Also in the root you'll find spellcheck.py, which is Norvig's original Python implementation of this algorithm. You can use this to guide you as to the implementation, but remember that your code should be idomatic in the language you're writing in, not a direct port of the Python code. 
 
@@ -12,7 +12,11 @@ In the first 5 minutes or so of the session, we'll go through this code and the 
 The algorithm
 -------------
 
-The algorithm works like this: you identify misspelled words in a block of text by matching all words that are not in the dictionary list (provided by the corpus file). For each word, you then generate a set of possible alternate spellings, and see which of these match the dictionary. Then you offer those matching words as the possible correct spellings.
+The algorithm works like this: 
+
+First, you load the corpus text. This is just a large amount of standard English text. You identify the set of words in the text and combine this with a word count (for example, for 'the', count all the instances of 'the' in the text). This gives you a list of dictionary words and a number indicating how common they are. This will be used to predict the most likely alternate spelling for misspelled words.
+
+You identify misspelled words in a block of text by matching all words that are not in the dictionary list (provided by the corpus file). For each word, you then generate a set of possible alternate spellings, and see which of these match the dictionary. Then you offer those matching words as the possible correct spellings.
 
 To generate the set of alternate spellings, we consider four cases: substitions, transpositions, insertions and deletions. 
 
