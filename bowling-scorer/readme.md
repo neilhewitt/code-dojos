@@ -14,11 +14,11 @@ Each game, or "line" of bowling, includes ten turns, or "frames" for the bowler.
 - If he gets a spare or strike in the last (tenth) frame, the bowler gets to throw one or two more bonus balls, respectively. These bonus throws are taken as part of the same turn. If the bonus throws knock down all the pins, the process does not repeat: the bonus throws are only used to calculate the score of the final frame. 
 - The game score is the total of all frame scores.
 
-Scores are represented by one or two alphanumeric characters, one for each ball bowled. So knocking down 4 pins followed by another 3 would be represented as '43' and would score 8 points. Knocking down 2 pins followed by
+Scores are represented by one or two alphanumeric characters, one for each ball bowled. So knocking down 4 pins followed by another 3 would be represented as '43' and would score 7 points. Knocking down 2 pins followed by
 the remaining 8 pins (a spare) would be '2/' (the forward slash represents the spare) and score 10 points plus the value of the next ball bowled. A strike would be represented as 'X'. A ball that brings down no
 pins is represented as a dash '-', so 4 pins followed by 0 pins would be '4-'. You should place a pipe / bar character | between each frame. So a complete game could be represented as:
 
-48|3/|X|X|9/|-/|-9|8/|XXX
+45|3/|X|X|9/|-/|-9|8/|XXX
 
 The tenth and final frame may have up to three characters, because you can potentially throw three balls. So a strike followed by an 8-spare would be 'X8/', or zero-spare plus 8 would be '-/8'.
 
