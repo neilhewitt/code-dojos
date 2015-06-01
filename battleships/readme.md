@@ -3,16 +3,19 @@ Battleships
 
 The goal of this Kata is to create a simple version of the game 'Battleships'
 
-The game takes place on a 10x10 grid. Each player (traditionally only 2 are allowed) has his own grid. On their grid, the player places their ships. Different ship types take a different number of grid squares
-- for example, a battleship requires 4x1 squares. Ships can be placed horizontally and vertically, but not diagonally. No part of a ship may occupy the same space as another ship.
+The game takes place on a 10x10 grid. Each player (traditionally only 2 are allowed) has his own grid. On their grid, the player places their ships. Different ship types take a different number of grid squares: for example, a battleship requires 4x1 squares. Ships can be placed horizontally and vertically, but not diagonally. No part of a ship may occupy the same space as another ship.
 
-The ship classes are as follows (one of each type per player)
+The ship classes are as follows (one of each type is allowed per player, players must place *all* ships for each game)
 
-Aircraft Carrier - 5x1
-Battleship - 4x1
-Submarine - 3x1
-Destroyer - 3x1
-Patrol Boat - 2x1
+Aircraft Carrier - 5x1 squares
+
+Battleship - 4x1 squares
+
+Submarine - 3x1 squares
+
+Destroyer - 3x1 squares
+
+Patrol Boat - 2x1 squares
 
 
 Stories
