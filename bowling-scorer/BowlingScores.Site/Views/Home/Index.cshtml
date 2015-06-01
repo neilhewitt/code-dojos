@@ -1,0 +1,52 @@
+﻿@model BowlingScores.Site.Models.AddPlayersViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-1">
+        <h2>Welcome to TenPin!</h2>
+        <p>
+            Use this application to keep track of your scores during your game.
+        </p>
+        <p>
+            First of all, enter the names of up to 6 players in the boxes below.
+        </p>
+        <h3>Player names</h3>
+        @using (Html.BeginForm("AddPlayers", "Game", FormMethod.Post))
+        {
+            <div class="panel-default" id="editable">
+                <div class="row">
+                    <div class="col-lg-4">Player 1 Name:</div>
+                    <div class="col-lg-8">@Html.TextBoxFor(m => m.Player1Name)</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">Player 2 Name:</div>
+                    <div class="col-lg-8">@Html.TextBoxFor(m => m.Player2Name)</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">Player 3 Name:</div>
+                    <div class="col-lg-8">@Html.TextBoxFor(m => m.Player3Name)</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">Player 4 Name:</div>
+                    <div class="col-lg-8">@Html.TextBoxFor(m => m.Player4Name)</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">Player 5 Name:</div>
+                    <div class="col-lg-8">@Html.TextBoxFor(m => m.Player5Name)</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">Player 6 Name:</div>
+                    <div class="col-lg-8">@Html.TextBoxFor(m => m.Player6Name)</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-8"><input type="submit" value="Start bowling!" /></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

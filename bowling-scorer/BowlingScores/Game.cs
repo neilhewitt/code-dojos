@@ -15,6 +15,20 @@ namespace TenPin.BowlingScores
         public int CurrentFrameNumber { get; private set; }
         public IEnumerable<Frame> Frames { get { return Enumerate(_currentFrame); } }
         public int Score { get { return GetProgressiveTotals().Last(); } }
+        public bool InProgress { get; protected set; }
+
+        internal void Start()
+        {
+            if (InProgress)
+                throw new BowlingException("Game has already started.");
+
+            InProgress = true;
+        }
+
+        internal void End()
+        {
+            InProgress = false;
+        }
 
         public void AddFrame(string frameAsString)
         {
