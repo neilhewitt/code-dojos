@@ -17,18 +17,18 @@ namespace Battleships
         private Game _game;
         private Action<string> _stdout;
         private Func<string> _stdin;
-        private IGridAdapter _adapter;
+        private IGridAdapter _gridAdapter;
 
         public void PrintMyGrid()
         {
             _stdout("Player Grid\n-----------\n\n");
-            _stdout(_adapter.Render(_game.MyGrid, true, true));
+            _stdout(_gridAdapter.Render(_game.MyGrid, true, true));
         }
 
         public void PrintOpponentGrid()
         {
             _stdout("Opponent Grid\n-------------\n\n");
-            _stdout(_adapter.Render(_game.OpponentGrid, true, true));
+            _stdout(_gridAdapter.Render(_game.OpponentGrid, true, true));
         }
 
         public GameConsoleAdapter(Game game, Action<string> stdout, Func<string> stdin, IGridAdapter adapter)
@@ -36,7 +36,7 @@ namespace Battleships
             _game = game;
             _stdout = stdout;
             _stdin = stdin;
-            _adapter = adapter;
+            _gridAdapter = adapter;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Battleships.UI
             grid.AddShip(ShipType.Carrier, new Coordinate(0,0), ShipOrientation.Horizontal);
             grid.AddShip(ShipType.PatrolBoat, new Coordinate(5,5), ShipOrientation.Vertical);
 
-            GridConsoleAdapter gridAdapter= new GridConsoleAdapter();
+            GridConsoleAdapter gridAdapter = new GridConsoleAdapter();
             GameConsoleAdapter gameAdapter = new GameConsoleAdapter(game, Console.Write, Console.ReadLine, gridAdapter);
             gameAdapter.PrintMyGrid();
             Console.ReadLine();

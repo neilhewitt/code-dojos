@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../battleships.core/battleships.core.csproj",
+      "bin": {
+        "assembly": "../../battleships.core/obj/{configuration}/battleships.core.dll",
+        "pdb": "../../battleships.core/obj/{configuration}/battleships.core.pdb"
+      }
+    }
+  }
+}
