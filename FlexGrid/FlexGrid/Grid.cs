@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Draughts.Core
+namespace FlexGrid
 {
     public class Grid<T> : IEnumerable<GridCell<T>>
     {
@@ -87,7 +87,7 @@ namespace Draughts.Core
             _grid[row, column] = item;
         }
 
-        public void Reset(int row, int column)
+        public void ClearCell(int row, int column)
         {
             CheckReadOnly();
             if (row >= _rows || column >= _columns || row < 0 || column < 0)
