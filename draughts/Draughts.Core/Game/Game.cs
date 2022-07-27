@@ -81,10 +81,10 @@ namespace Draughts.Core
             return true;
         }
 
-        public Game()
+        public Game(int movesAhead)
         {
-            BlackPlayer = new Player(this, PieceColour.Black);
-            WhitePlayer = new Player(this, PieceColour.White);
+            BlackPlayer = new Player(this, PieceColour.Black, movesAhead);
+            WhitePlayer = new Player(this, PieceColour.White, movesAhead);
 
             Board = new Board(this);
             Board.Initialise();

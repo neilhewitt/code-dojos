@@ -10,6 +10,7 @@ namespace Draughts.Core
     {
         private static Random _random = new Random(DateTime.Now.Millisecond);
 
+        private int _movesAhead;
         private Game _game;
         private Func<IEnumerable<Move>, Move, Move> _selectMoveCallback;
 
@@ -27,7 +28,7 @@ namespace Draughts.Core
         {
             IEnumerable<Move> validMoves = Core.Move.ValidMovesFor(_game.Board, this);
             // we can use either random best move (pick any from valid moves) or MiniMax (AI play-ahead up to n generations)
-            bestMove = useRandomBestMove ? RandomBestMove(validMoves) : MiniMaxBestMove(validMoves, 3);
+            bestMove = useRandomBestMove ? RandomBestMove(validMoves) : MiniMaxBestMove(validMoves, _movesAhead);
             {
                 if (bestMove != null && bestMove.PiecesTaken > 0)
                 {
@@ -159,13 +160,14 @@ namespace Draughts.Core
             }
         }
 
-        public Player(Game game, PieceColour colour)
+        public Player(Game game, PieceColour colour, int movesAhead)
         {
             Name = "Computer";
             _game = game;
             Colour = colour;
             IsComputerPlayer = true;
             _selectMoveCallback = (moves, move) => move;
+            _movesAhead = movesAhead;
         }
     }
 }

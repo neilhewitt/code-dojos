@@ -16,9 +16,10 @@ namespace Draughts.ConsoleApp
             string path = "c:\\temp\\draughts.log";
             if (File.Exists(path)) File.Delete(path);
             int iterations = 1000000000;
+            int movesAhead = 3;
             while (iterations-- > 0)
             {
-                Game game = new Game();
+                Game game = new Game(movesAhead);
                 TestUI ui = new TestUI(game, path);
                 game.RegisterToPlay("John", (moves, move) => move);
                 game.RegisterToPlay("Slartibartfast", (moves, move) => move);
